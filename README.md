@@ -26,63 +26,13 @@ This script provides real-time mapping and visualization using RSSI data collect
 ---
 
 ##  Requirements
-
-Install dependencies (if not already):
-
-```bash
-pip install matplotlib numpy pandas
-## 🚀 How to Run
-
-1. **Clone the Repository**
-
-```bash
-git clone https://github.com/your-username/indoor-localization.git
-cd indoor-localization
-Sure! Here's the updated **"How to Run"** section with bold emphasis (`**`) for steps 2, 3, and 4, so it looks more readable in your `README.md`:
-
 ---
-
-````markdown
 ## 🚀 How to Run
 
-1. **Clone the Repository**
+Follow these steps to set up and run the indoor localization visualization script:
+
+**1️⃣ Clone the Repository**
 
 ```bash
 git clone https://github.com/your-username/indoor-localization.git
 cd indoor-localization
-````
-
-2. **Install Required Libraries**
-
-Make sure Python is installed (preferably 3.8 or above). Then run:
-
-```bash
-pip install -r requirements.txt
-```
-
-> If you don’t have a `requirements.txt`, just install the essentials:
-
-```bash
-pip install numpy pandas matplotlib
-```
-
-3. **Prepare Your Data**
-
-Ensure your Wi-Fi RSSI/CSI data is saved in a CSV file like:
-
-```
-GridID, RSSI1, RSSI2, RSSI3, ...
-G1, -45, -60, -70
-G2, -48, -65, -72
-...
-```
-
-Save this as `localization_data.csv` in the same folder as the script.
-
-4. **Run the Visualization Script**
-
-```bash
-python wifi_scan.py
-```
-
-> This will generate a grid-based plot showing signal strength or estimated position.
