@@ -7,7 +7,7 @@ import random
 from mpl_toolkits.mplot3d import Axes3D  # For 3D plots
 
 # ========== USER INPUT ========== #
-area_cm2 = float(input("📏 Enter room area in cm²: "))
+area_cm2 = float(input(" Enter room area in cm²: "))
 
 # ========== ROOM GRID SETUP ========== #
 room_side = np.sqrt(area_cm2)  # Assume square room
@@ -20,7 +20,7 @@ total_cols = sub_divs_per_main
 main_box_size = room_side / main_divs
 sub_box_size = main_box_size / sub_divs_per_main
 
-print(f"\n🧱 Room divided into {total_rows} rows × {total_cols} columns.")
+print(f"\n Room divided into {total_rows} rows × {total_cols} columns.")
 print(f"Each grid cell ≈ {sub_box_size:.2f} cm × {sub_box_size:.2f} cm\n")
 
 # ========== KALMAN FILTER SETUP ========== #
@@ -61,7 +61,7 @@ pd.DataFrame(filtered_grid).to_csv("output/simulated_filtered.csv", index=False)
 
 # 1. Heatmap
 plt.figure(figsize=(10, 6))
-plt.title("📶 Simulated WiFi Signal Heatmap (Filtered)")
+plt.title("Simulated WiFi Signal Heatmap (Filtered)")
 plt.xlabel("Sub-Box Columns")
 plt.ylabel("Main Box Rows")
 heatmap = plt.imshow(filtered_grid, cmap='plasma', interpolation='nearest')
@@ -71,7 +71,7 @@ plt.show()
 
 # 2. Gradient
 plt.figure(figsize=(10, 6))
-plt.title("🎨 WiFi Gradient View")
+plt.title(" WiFi Gradient View")
 gradient = plt.imshow(filtered_grid, cmap='coolwarm', interpolation='bicubic')
 plt.colorbar(gradient, label='Signal Strength (dBm)')
 plt.savefig("output/simulated_gradient.png")
@@ -79,7 +79,7 @@ plt.show()
 
 # 3. Line Graph (Row-wise)
 plt.figure(figsize=(10, 5))
-plt.title("📈 Row-wise Signal Strength (Filtered)")
+plt.title("Row-wise Signal Strength (Filtered)")
 for i in range(total_rows):
     plt.plot(filtered_grid[i], label=f"Row {i+1}")
 plt.xlabel("Sub-Box Columns")
@@ -91,7 +91,7 @@ plt.show()
 
 # 4. Line Graph (Column-wise)
 plt.figure(figsize=(10, 5))
-plt.title("📈 Column-wise Signal Strength (Filtered)")
+plt.title(" Column-wise Signal Strength (Filtered)")
 for j in range(total_cols):
     col_vals = filtered_grid[:, j]
     plt.plot(col_vals, label=f"Col {j+1}")
@@ -123,10 +123,10 @@ plt.show()
 plt.figure(figsize=(10, 6))
 cp = plt.contourf(X, Y, Z, cmap='inferno', levels=20)
 plt.colorbar(cp, label="Signal Strength (dBm)")
-plt.title("🌍 Contour Plot of WiFi Signal")
+plt.title("Contour Plot of WiFi Signal")
 plt.xlabel("Columns")
 plt.ylabel("Rows")
 plt.savefig("output/contour_plot.png")
 plt.show()
 
-print("✅ Done! All visualizations and CSV files saved in ./output/")
+print("Done! All visualizations and CSV files saved in ./output/")
